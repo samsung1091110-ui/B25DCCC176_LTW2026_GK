@@ -1,38 +1,234 @@
-.App {
+:root {
+  color: #163b3e;
+  background: #f2f7f7;
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: #163b3e;
+  background: #f2f7f7;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  padding: 8px 12px;
+  border: 1px solid #34abd0;
+  color: #073b40;
+  background: #34abd0;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: #2798be;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  min-height: 56px;
+  padding: 0 24px;
+  background: #34abd0;
+}
+
+.site-nav a {
+  text-decoration: none;
+}
+
+.site-nav a:not(.active) {
+  color: #073b40;
+}
+
+.active {
+  color: red;
+  font-weight: bold;
+}
+
+.page {
+  width: calc(100% - 32px);
+  max-width: 1040px;
+  margin: 32px auto;
+  padding: 24px;
+  border: 1px solid #cde3e9;
+  background: #ffffff;
+}
+
+h1 {
+  margin: 0 0 24px;
+  color: #163b3e;
+  font-size: 28px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.statistics p,
+.product-details p {
+  margin: 12px 0;
+  font-size: 17px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.statistics p {
+  padding: 12px;
+  border: 1px solid #92cbd9;
+  background: #ffffff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.filters label,
+.form-field {
   display: flex;
   flex-direction: column;
+  gap: 6px;
+}
+
+.filters input,
+.filters select,
+.form-field input,
+.form-field select {
+  min-height: 38px;
+  padding: 7px 9px;
+  border: 1px solid #83bbc7;
+  color: #163b3e;
+  background: #ffffff;
+}
+
+.filters input {
+  width: min(360px, 80vw);
+}
+
+.filters select {
+  min-width: 220px;
+}
+
+.product-count {
+  margin: 12px 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #c7dfe5;
+  text-align: left;
+}
+
+th {
+  color: #073b40;
+  background: #34abd0;
+}
+
+tbody tr:hover td {
+  background: #e7f5f9;
+}
+
+.product-name {
+  color: #117b9b;
+}
+
+.low-stock {
+  color: #9b1c24;
+  font-weight: bold;
+}
+
+.stock-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.delete-button {
+  border-color: #e53935;
+  background: #e53935;
+}
+
+.delete-button:hover:not(:disabled) {
+  background: #c62828;
+}
+
+.form-product {
+  display: grid;
+  gap: 16px;
+  width: min(100%, 480px);
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+}
+
+.form-error {
+  margin: 0;
+  color: #8c1d24;
+  font-weight: bold;
+}
+
+.notice {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 16px;
+  margin-bottom: 18px;
+  padding: 12px;
+  border: 1px solid #8c1d24;
+  color: #163b3e;
+  background: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+.notice p {
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.detail-back {
+  margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+  .site-nav {
+    gap: 16px;
+    padding: 0 16px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .page {
+    margin-top: 24px;
+    padding: 16px;
   }
 }
